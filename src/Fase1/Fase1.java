@@ -309,30 +309,19 @@ public class Fase1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String letraImagen="";
+        for(int i=0;i<4;i++){
+                    letra = generador.nextInt(15)+65;
+                    letraImagen+=(char)letra;
+        }
         try {
-               for(int i=0;i<4;i++){
-               letra = generador.nextInt(15)+65;
-                   ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));
-                   jLabelImagen1.setIcon(imagen);
-               }
-                    for(int i=0;i<4;i++){
-                        letra = generador.nextInt(15)+65;
-                        ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));
-                        jLabelImagen2.setIcon(imagen);
-                    }
-                    for(int i=0;i<4;i++){
-                        letra = generador.nextInt(15)+65;
-                        ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));
-                        jLabelImagen3.setIcon(imagen);
-               }
-                   for(int i=0;i<4;i++){
-                       letra = generador.nextInt(15)+65;
-                        ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));
-                        jLabelImagen4.setIcon(imagen);
-               }
-
-              } catch (IOException ex) {
-                     Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
+            jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(0) +".png"))));
+            jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(1) +".png"))));
+            jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(2) +".png"))));
+            jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(3) +".png"))));
+               
+        } catch (IOException ex) {
+           Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
         }
            
        
@@ -359,87 +348,29 @@ public class Fase1 extends javax.swing.JFrame {
         jToggleButton15.setEnabled(true);
         jToggleButton16.setEnabled(true);
         
+        String letraImagen="";
+        for(int n=0;n<16;n++){   
+             letra = generador.nextInt(15)+65;
+             letraImagen+=(char)letra;
+        }
         try {
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton1.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton2.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton3.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton4.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton5.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton6.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton7.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton8.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton9.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton10.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton11.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton12.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton13.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton14.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton15.setIcon(imagen);
-             }
-             for(int n=0;n<=16;n++){   
-                 letra = generador.nextInt(15)+65;
-                 ImageIcon imagen = new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ (char)(letra) +".png")));            
-                 jToggleButton16.setIcon(imagen);
-             }
+            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(0) +".png"))));
+             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(1) +".png"))));
+             jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(2) +".png"))));
+             jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(3) +".png"))));
+             jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(4) +".png"))));
+             jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(5) +".png"))));
+             jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(6) +".png"))));
+             jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(7) +".png"))));
+             jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(8) +".png"))));
+             jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(9) +".png"))));
+             jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(10) +".png"))));
+             jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(11) +".png"))));
+             jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(12) +".png"))));
+             jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(13) +".png"))));
+             jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(14) +".png"))));
+             jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(15) +".png"))));
+             
         } catch (IOException ex) {
                  Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
        }
