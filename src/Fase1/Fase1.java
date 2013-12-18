@@ -21,7 +21,7 @@ public class Fase1 extends javax.swing.JFrame {
     String letraImagen1="";
     String letraImagen2="";
     int aciertos=0;
-        
+    int numImagenesAcertar = 4;    
     /**
      * Creates new form Fase1
      */
@@ -353,30 +353,99 @@ public class Fase1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Aciertos a 0
+        //aciertos
         aciertos=0;
-             
-        for(int i=0;i<8;i++){
+        //botones
+        jToggleButton1.setEnabled(false);
+        jToggleButton2.setEnabled(false);
+        jToggleButton3.setEnabled(false);
+        jToggleButton4.setEnabled(false);
+        jToggleButton5.setEnabled(false);
+        jToggleButton6.setEnabled(false);
+        jToggleButton7.setEnabled(false);
+        jToggleButton8.setEnabled(false);
+        jToggleButton9.setEnabled(false);
+        jToggleButton10.setEnabled(false);
+        jToggleButton11.setEnabled(false);
+        jToggleButton12.setEnabled(false);
+        jToggleButton13.setEnabled(false);
+        jToggleButton14.setEnabled(false);
+        jToggleButton15.setEnabled(false);
+        jToggleButton16.setEnabled(false);
+
+        jToggleButton1.setSelected(false);
+        jToggleButton2.setSelected(false);
+        jToggleButton3.setSelected(false);
+        jToggleButton4.setSelected(false);
+        jToggleButton5.setSelected(false);
+        jToggleButton6.setSelected(false);
+        jToggleButton7.setSelected(false);
+        jToggleButton8.setSelected(false);
+        jToggleButton9.setSelected(false);
+        jToggleButton10.setSelected(false);
+        jToggleButton11.setSelected(false);
+        jToggleButton12.setSelected(false);
+        jToggleButton13.setSelected(false);
+        jToggleButton14.setSelected(false);
+        jToggleButton15.setSelected(false);
+        jToggleButton16.setSelected(false);
+        
+        for(int i=0;i<numImagenesAcertar;i++){
                     letra = generador.nextInt(15)+65;
                     letraImagen1+=(char)letra;
         }
+        
+        
+        
         try {
-           for(int lvl = 0;lvl<=4 && lvl<=7;lvl++){
-            jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
-            jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
-            jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
-            jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
-                if(lvl>4 && lvl<=7){
+           switch(numImagenesAcertar){
+               case 4:
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
+                break;
+               case 5:
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
                 jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
-                }
-                if(lvl>=5 && lvl<=7){
+                break;
+               case 6:
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
                 jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(5) +".png"))));
-                }
-                if(lvl>=7){
+                break;
+               case 7:
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
+                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(5) +".png"))));
                 jLabelImagen7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(6) +".png"))));
-                }        
-           
-        }
+                break;
+           }
+            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
+            jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));      
         } catch (IOException ex) {
            Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -387,7 +456,7 @@ public class Fase1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //Aciertos a 0
+        //aciertos
         aciertos=0;
         //botones ACTIVADOS
         jToggleButton1.setEnabled(true);
@@ -448,90 +517,91 @@ public class Fase1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int letraSeleccionada1 = (letraImagen1.indexOf(letraImagen2));
-        System.out.println("" + letraSeleccionada1);
-        if(jToggleButton1.isSelected() && letraSeleccionada1==-1){
+               
+        if(jToggleButton1.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(0))!=-1){
              aciertos++;
         }else{
            jToggleButton1.setEnabled(false);
         }
-        if(jToggleButton2.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton2.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(1))!=-1){
             aciertos++;
         }else{
             jToggleButton2.setEnabled(false);
         }
-        if(jToggleButton3.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton3.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(2))!=-1){
             aciertos++;
         }else{
             jToggleButton3.setEnabled(false);
         }
-        if(jToggleButton4.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton4.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(3))!=-1){
             aciertos++;
         }else{
             jToggleButton4.setEnabled(false);
         }
-        if(jToggleButton5.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton5.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(4))!=-1){
             aciertos++;
         }else{
             jToggleButton5.setEnabled(false);
         }
-        if(jToggleButton6.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton6.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(5))!=-1){
             aciertos++;
         }else{
             jToggleButton6.setEnabled(false);
         }
-        if(jToggleButton7.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton7.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(6))!=-1){
             aciertos++;
         }else{
             jToggleButton7.setEnabled(false);
         }
-        if(jToggleButton8.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton8.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(7))!=-1){
            aciertos++;
         }else{
            jToggleButton8.setEnabled(false);
         }
-        if(jToggleButton9.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton9.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(8))!=-1){
             aciertos++;
         }else{
             jToggleButton9.setEnabled(false);
         }
-        if(jToggleButton10.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton10.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(9))!=-1){
             aciertos++;
         }else{
             jToggleButton10.setEnabled(false);
         }
-        if(jToggleButton11.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton11.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(10))!=-1){
             aciertos++;
         }else{
             jToggleButton11.setEnabled(false);
         }
-        if(jToggleButton12.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton12.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(11))!=-1){
             aciertos++;
         }else{
             jToggleButton12.setEnabled(false);
         }
-        if(jToggleButton13.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton13.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(12))!=-1){
             aciertos++;
         }else{
             jToggleButton13.setEnabled(false);
         }
-        if(jToggleButton14.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton14.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(13))!=-1){
             aciertos++;
         }else{
             jToggleButton14.setEnabled(false);
         }
-        if(jToggleButton15.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton15.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(14))!=-1){
             aciertos++;
         }else{
             jToggleButton15.setEnabled(false);
         }
-        if(jToggleButton16.isSelected() && letraSeleccionada1==-1){
+        if(jToggleButton16.isSelected() && letraImagen1.indexOf(letraImagen2.charAt(15))!=-1){
             aciertos++;
         }else{
             jToggleButton16.setEnabled(false);
         }
         jLabelAciertos.setText("" + aciertos);
-        
+        if(aciertos == numImagenesAcertar && numImagenesAcertar<7) {
+            numImagenesAcertar++;
+        }
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
