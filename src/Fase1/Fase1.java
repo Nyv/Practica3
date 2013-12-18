@@ -18,7 +18,10 @@ import javax.swing.ImageIcon;
 public class Fase1 extends javax.swing.JFrame {
     Random generador = new Random();
     int letra;
-    
+    String letraImagen1="";
+    String letraImagen2="";
+    int aciertos=0;
+        
     /**
      * Creates new form Fase1
      */
@@ -57,9 +60,14 @@ public class Fase1 extends javax.swing.JFrame {
         jLabelImagen3 = new javax.swing.JLabel();
         jLabelImagen4 = new javax.swing.JLabel();
         jLabelImagen2 = new javax.swing.JLabel();
+        jLabelImagen6 = new javax.swing.JLabel();
+        jLabelImagen5 = new javax.swing.JLabel();
+        jLabelImagen7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabelAciertos = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -93,6 +101,12 @@ public class Fase1 extends javax.swing.JFrame {
 
         jLabelImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fase1/imagenes/Z.png"))); // NOI18N
 
+        jLabelImagen6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fase1/imagenes/Z.png"))); // NOI18N
+
+        jLabelImagen5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fase1/imagenes/Z.png"))); // NOI18N
+
+        jLabelImagen7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fase1/imagenes/Z.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -106,46 +120,72 @@ public class Fase1 extends javax.swing.JFrame {
                 .addComponent(jLabelImagen3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelImagen4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelImagen5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelImagen6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelImagen7)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelImagen3)
-                    .addComponent(jLabelImagen1)
-                    .addComponent(jLabelImagen4)
-                    .addComponent(jLabelImagen2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabelImagen7)
+                    .addComponent(jLabelImagen5)
+                    .addComponent(jLabelImagen6)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabelImagen3)
+                        .addComponent(jLabelImagen1)
+                        .addComponent(jLabelImagen4)
+                        .addComponent(jLabelImagen2, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 204, 255), new java.awt.Color(153, 204, 255)));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Empezar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Recordar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jButton3.setText("Comprobar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabelAciertos.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabelAciertos.setForeground(new java.awt.Color(51, 153, 255));
+        jLabelAciertos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Aciertos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabelAciertos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -155,7 +195,11 @@ public class Fase1 extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelAciertos, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -287,10 +331,10 @@ public class Fase1 extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -309,28 +353,43 @@ public class Fase1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String letraImagen="";
-        for(int i=0;i<4;i++){
+        //Aciertos a 0
+        aciertos=0;
+             
+        for(int i=0;i<8;i++){
                     letra = generador.nextInt(15)+65;
-                    letraImagen+=(char)letra;
+                    letraImagen1+=(char)letra;
         }
         try {
-            jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(0) +".png"))));
-            jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(1) +".png"))));
-            jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(2) +".png"))));
-            jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(3) +".png"))));
-               
+           for(int lvl = 0;lvl<=4 && lvl<=7;lvl++){
+            jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
+            jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
+            jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
+            jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
+                if(lvl>4 && lvl<=7){
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
+                }
+                if(lvl>=5 && lvl<=7){
+                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(5) +".png"))));
+                }
+                if(lvl>=7){
+                jLabelImagen7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(6) +".png"))));
+                }        
+           
+        }
         } catch (IOException ex) {
            Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
         }
-           
+        
        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //botones
+        //Aciertos a 0
+        aciertos=0;
+        //botones ACTIVADOS
         jToggleButton1.setEnabled(true);
         jToggleButton2.setEnabled(true);
         jToggleButton3.setEnabled(true);
@@ -347,34 +406,134 @@ public class Fase1 extends javax.swing.JFrame {
         jToggleButton14.setEnabled(true);
         jToggleButton15.setEnabled(true);
         jToggleButton16.setEnabled(true);
+        //jLabel DESACTIVADOS
+        try {
+            jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+            jLabelImagen7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));
+        } catch (IOException ex) {
+            Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        String letraImagen="";
+        
         for(int n=0;n<16;n++){   
              letra = generador.nextInt(15)+65;
-             letraImagen+=(char)letra;
+             letraImagen2+=(char)letra;
         }
         try {
-            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(0) +".png"))));
-             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(1) +".png"))));
-             jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(2) +".png"))));
-             jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(3) +".png"))));
-             jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(4) +".png"))));
-             jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(5) +".png"))));
-             jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(6) +".png"))));
-             jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(7) +".png"))));
-             jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(8) +".png"))));
-             jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(9) +".png"))));
-             jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(10) +".png"))));
-             jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(11) +".png"))));
-             jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(12) +".png"))));
-             jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(13) +".png"))));
-             jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(14) +".png"))));
-             jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen.charAt(15) +".png"))));
+            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(0) +".png"))));
+             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(1) +".png"))));
+             jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(2) +".png"))));
+             jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(3) +".png"))));
+             jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(4) +".png"))));
+             jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(5) +".png"))));
+             jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(6) +".png"))));
+             jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(7) +".png"))));
+             jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(8) +".png"))));
+             jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(9) +".png"))));
+             jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(10) +".png"))));
+             jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(11) +".png"))));
+             jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(12) +".png"))));
+             jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(13) +".png"))));
+             jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(14) +".png"))));
+             jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(15) +".png"))));
              
         } catch (IOException ex) {
                  Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int letraSeleccionada1 = (letraImagen1.indexOf(letraImagen2));
+        System.out.println("" + letraSeleccionada1);
+        if(jToggleButton1.isSelected() && letraSeleccionada1==-1){
+             aciertos++;
+        }else{
+           jToggleButton1.setEnabled(false);
+        }
+        if(jToggleButton2.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton2.setEnabled(false);
+        }
+        if(jToggleButton3.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton3.setEnabled(false);
+        }
+        if(jToggleButton4.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton4.setEnabled(false);
+        }
+        if(jToggleButton5.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton5.setEnabled(false);
+        }
+        if(jToggleButton6.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton6.setEnabled(false);
+        }
+        if(jToggleButton7.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton7.setEnabled(false);
+        }
+        if(jToggleButton8.isSelected() && letraSeleccionada1==-1){
+           aciertos++;
+        }else{
+           jToggleButton8.setEnabled(false);
+        }
+        if(jToggleButton9.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton9.setEnabled(false);
+        }
+        if(jToggleButton10.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton10.setEnabled(false);
+        }
+        if(jToggleButton11.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton11.setEnabled(false);
+        }
+        if(jToggleButton12.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton12.setEnabled(false);
+        }
+        if(jToggleButton13.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton13.setEnabled(false);
+        }
+        if(jToggleButton14.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton14.setEnabled(false);
+        }
+        if(jToggleButton15.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton15.setEnabled(false);
+        }
+        if(jToggleButton16.isSelected() && letraSeleccionada1==-1){
+            aciertos++;
+        }else{
+            jToggleButton16.setEnabled(false);
+        }
+        jLabelAciertos.setText("" + aciertos);
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,10 +572,15 @@ public class Fase1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabelAciertos;
     private javax.swing.JLabel jLabelImagen1;
     private javax.swing.JLabel jLabelImagen2;
     private javax.swing.JLabel jLabelImagen3;
     private javax.swing.JLabel jLabelImagen4;
+    private javax.swing.JLabel jLabelImagen5;
+    private javax.swing.JLabel jLabelImagen6;
+    private javax.swing.JLabel jLabelImagen7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
