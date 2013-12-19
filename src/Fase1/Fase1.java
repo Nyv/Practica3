@@ -85,6 +85,7 @@ public class Fase1 extends javax.swing.JFrame {
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton15 = new javax.swing.JToggleButton();
         jToggleButton16 = new javax.swing.JToggleButton();
+        jLabelLvlUp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,6 +148,9 @@ public class Fase1 extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 204, 255), new java.awt.Color(153, 204, 255)));
 
+        jButton1.setBackground(new java.awt.Color(179, 222, 244));
+        jButton1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(51, 153, 255));
         jButton1.setText("Empezar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +158,9 @@ public class Fase1 extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(179, 222, 244));
+        jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(51, 153, 255));
         jButton2.setText("Recordar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +168,9 @@ public class Fase1 extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(179, 222, 244));
+        jButton3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(51, 153, 255));
         jButton3.setText("Comprobar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,9 +178,10 @@ public class Fase1 extends javax.swing.JFrame {
             }
         });
 
-        jLabelAciertos.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabelAciertos.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabelAciertos.setForeground(new java.awt.Color(51, 153, 255));
-        jLabelAciertos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Aciertos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        jLabelAciertos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelAciertos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Aciertos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 10), new java.awt.Color(102, 153, 255))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -320,8 +331,10 @@ public class Fase1 extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelLvlUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -334,7 +347,8 @@ public class Fase1 extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelLvlUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -390,44 +404,81 @@ public class Fase1 extends javax.swing.JFrame {
         jToggleButton15.setSelected(false);
         jToggleButton16.setSelected(false);
         
-        for(int i=0;i<numImagenesAcertar;i++){
+        //generador numeros
+        for(int i=0;i<8;i++){
                     letra = generador.nextInt(15)+65;
                     letraImagen1+=(char)letra;
         }
-        
-        
-        
+        //variables letras por separado
+        char letra1 = letraImagen1.charAt(0);
+        char letra2 = letraImagen1.charAt(1);
+        char letra3 = letraImagen1.charAt(2);
+        char letra4 = letraImagen1.charAt(3);
+        char letra5 = letraImagen1.charAt(4);
+        char letra6 = letraImagen1.charAt(5);
+        char letra7 = letraImagen1.charAt(6);
+        //System.out.println("Letras:" + letra1 + "-" + letra2 + "-" + letra3 + "-" + letra4+ "-" + letra5 + "-" + letra6 + "-" + letra7);  
+        //comprobar repeticiones
+        while(letra1 == letra2 || letra1 == letra3 || letra1 == letra4 || letra1 == letra5 || letra1 == letra6 || letra1 == letra7){
+            letra = generador.nextInt(15)+65;
+            letra1 = (char)letra;
+        }
+        while(letra2 == letra1 || letra2 == letra3 || letra2 == letra4 || letra2 == letra5 || letra2 == letra6 || letra2== letra7){
+            letra = generador.nextInt(15)+65;
+            letra2 = (char)letra;
+        }
+        while(letra3 == letra1 || letra3 == letra2 || letra3 == letra4 || letra3 == letra5 || letra3 == letra6 || letra3 == letra7){
+            letra = generador.nextInt(15)+65;
+            letra3 = (char)letra;
+        }
+        while(letra4 == letra1 || letra4 == letra2 || letra4 == letra3 || letra4 == letra5 || letra4 == letra6 || letra4 == letra7){
+            letra = generador.nextInt(15)+65;
+            letra4 = (char)letra;
+        }
+        while(letra5 == letra1 || letra5 == letra3 || letra5 == letra4 || letra2 == letra5 || letra5 == letra6 || letra5== letra7){
+            letra = generador.nextInt(15)+65;
+            letra5 = (char)letra;
+        }
+        while(letra6 == letra1 || letra6 == letra2 || letra6 == letra4 || letra6 == letra5 || letra3 == letra6 || letra6 == letra7){
+            letra = generador.nextInt(15)+65;
+            letra6 = (char)letra;
+        }
+        while(letra7 == letra1 || letra7 == letra2 || letra7 == letra3 || letra7 == letra5 || letra7 == letra6 || letra4 == letra7){
+            letra = generador.nextInt(15)+65;
+            letra7 = (char)letra;
+        }
+        //System.out.println("Letras 2:" + letra1 + "-" + letra2 + "-" + letra3 + "-" + letra4+ "-" + letra5 + "-" + letra6 + "-" + letra7); 
         try {
            switch(numImagenesAcertar){
                case 4:
-                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
-                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
-                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
-                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra1 +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra2 +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra3 +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra4 +".png"))));
                 break;
                case 5:
-                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
-                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
-                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
-                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
-                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra1 +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra2 +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra3 +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra4 +".png"))));
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra5 +".png"))));
                 break;
                case 6:
-                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
-                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
-                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
-                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
-                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
-                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(5) +".png"))));
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra1 +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra2 +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra3 +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra4 +".png"))));
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra5 +".png"))));
+                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra6 +".png"))));
                 break;
                case 7:
-                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(0) +".png"))));
-                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(1) +".png"))));
-                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(2) +".png"))));
-                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(3) +".png"))));
-                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(4) +".png"))));
-                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(5) +".png"))));
-                jLabelImagen7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen1.charAt(6) +".png"))));
+                jLabelImagen1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra1 +".png"))));
+                jLabelImagen2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra2 +".png"))));
+                jLabelImagen3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra3 +".png"))));
+                jLabelImagen4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra4 +".png"))));
+                jLabelImagen5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra5 +".png"))));
+                jLabelImagen6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra6 +".png"))));
+                jLabelImagen7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra7 +".png"))));
                 break;
            }
             jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/Z.png"))));            
@@ -489,27 +540,113 @@ public class Fase1 extends javax.swing.JFrame {
         }
         
         
-        for(int n=0;n<16;n++){   
+        for(int n=0;n<17;n++){   
              letra = generador.nextInt(15)+65;
              letraImagen2+=(char)letra;
         }
+        //variables letras por separado
+        char letra1 = letraImagen2.charAt(0);
+        char letra2 = letraImagen2.charAt(1);
+        char letra3 = letraImagen2.charAt(2);
+        char letra4 = letraImagen2.charAt(3);
+        char letra5 = letraImagen2.charAt(4);
+        char letra6 = letraImagen2.charAt(5);
+        char letra7 = letraImagen2.charAt(6);
+        char letra8 = letraImagen2.charAt(7);
+        char letra9 = letraImagen2.charAt(8);
+        char letra10 = letraImagen2.charAt(9);
+        char letra11 = letraImagen2.charAt(10);
+        char letra12 = letraImagen2.charAt(11);
+        char letra13 = letraImagen2.charAt(12);
+        char letra14 = letraImagen2.charAt(13);
+        char letra15 = letraImagen2.charAt(14);
+        char letra16 = letraImagen2.charAt(15);
+        //System.out.println("Letras3:" + letra1 + "-" + letra2 + "-" + letra3 + "-" + letra4+ letra5 + "-" + letra6 + "-" + letra7 + "-" + letra8+ letra9 + "-" + letra10 + "-" + letra11 + "-" + letra12+ letra13 + "-" + letra14 + "-" + letra15 + "-" + letra16);  
+        //comprobar repeticiones
+        if(letra1 == letra2 || letra1 == letra3 || letra1 == letra4 || letra1 == letra5 || letra1 == letra6 || letra1 == letra7 ||letra1 == letra8 || letra1 == letra9 || letra1 == letra10 || letra1 == letra11 || letra1 == letra12 || letra1 == letra13 || letra1 == letra14 || letra1 == letra15 || letra1 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra1 = (char)letra;
+        }
+        if(letra2 == letra1 || letra2 == letra3 || letra2 == letra4 || letra2 == letra5 || letra2 == letra6 || letra2 == letra7 ||letra2 == letra8 || letra2 == letra9 || letra2 == letra10 || letra2 == letra11 || letra2 == letra12 || letra2 == letra13 || letra2 == letra14 || letra2 == letra15 || letra2 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra2 = (char)letra;
+        }
+        if(letra3 == letra1 || letra3 == letra2 || letra3 == letra4 || letra3 == letra5 || letra3 == letra6 || letra3== letra7 ||letra3 == letra8 || letra3 == letra9 || letra3 == letra10 || letra3 == letra11 || letra3 == letra12 || letra3 == letra13 || letra3 == letra14 || letra3 == letra15 || letra3 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra3 = (char)letra;
+        }
+        if(letra4 == letra1 || letra4 == letra2 || letra4 == letra3 || letra4 == letra5 || letra4 == letra6 || letra4 == letra7 ||letra4 == letra8 || letra4 == letra9 || letra4 == letra10 || letra4 == letra11 || letra4 == letra12 || letra4 == letra13 || letra4 == letra14 || letra4 == letra15 || letra4 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra4 = (char)letra;
+        }
+        if(letra1 == letra5 || letra5 == letra3 || letra5 == letra4 || letra5 == letra2 || letra5 == letra6 || letra5 == letra7 ||letra5 == letra8 || letra5 == letra9 || letra5 == letra10 || letra5 == letra11 || letra5 == letra12 || letra5 == letra13 || letra5 == letra14 || letra5 == letra15 || letra5 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra5 = (char)letra;
+        }
+        if(letra6 == letra1 || letra6 == letra3 || letra6 == letra4 || letra6 == letra5 || letra2 == letra6 || letra6 == letra7 ||letra6 == letra8 || letra6 == letra9 || letra6 == letra10 || letra6 == letra11 || letra6 == letra12 || letra6 == letra13 || letra6 == letra14 || letra6 == letra15 || letra6 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra6 = (char)letra;
+        }
+        if(letra7 == letra1 || letra3 == letra7 || letra7 == letra4 || letra7 == letra5 || letra7 == letra6 || letra2== letra7 ||letra7 == letra8 || letra7 == letra9 || letra7 == letra10 || letra7 == letra11 || letra7 == letra12 || letra7 == letra13 || letra7 == letra14 || letra7 == letra15 || letra7 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra7 = (char)letra;
+        }
+        if(letra8 == letra1 || letra4 == letra8 || letra8 == letra3 || letra8 == letra5 || letra8 == letra6 || letra8 == letra7 ||letra2 == letra8 || letra8 == letra9 || letra8 == letra10 || letra8 == letra11 || letra8 == letra12 || letra8 == letra13 || letra8 == letra14 || letra8 == letra15 || letra8 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra8 = (char)letra;
+        }
+        if(letra1 == letra9 || letra9 == letra3 || letra9 == letra4 || letra9 == letra2 || letra9 == letra6 || letra9 == letra7 ||letra9 == letra8 || letra5 == letra9 || letra9 == letra10 || letra9 == letra11 || letra9 == letra12 || letra9 == letra13 || letra9 == letra14 || letra9 == letra15 || letra9 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra9 = (char)letra;
+        }
+        if(letra10 == letra1 || letra10 == letra3 || letra10 == letra4 || letra10 == letra5 || letra2 == letra10 || letra10 == letra7 ||letra10 == letra8 || letra6 == letra10 || letra6 == letra10 || letra10== letra11 || letra10 == letra12 || letra10 == letra13 || letra10 == letra14 || letra10 == letra15 || letra10 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra10 = (char)letra;
+        }
+        if(letra11 == letra1 || letra3 == letra11 || letra11 == letra4 || letra11 == letra5 || letra11 == letra6 || letra2== letra11 ||letra11 == letra8 || letra11 == letra9 || letra7 == letra10 || letra7 == letra11 || letra11 == letra12 || letra11 == letra13 || letra11 == letra14 || letra11 == letra15 || letra11 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra11 = (char)letra;
+        }
+        if(letra12 == letra1 || letra4 == letra12 || letra12 == letra3 || letra12 == letra5 || letra12 == letra6 || letra12 == letra7 ||letra2 == letra12 || letra12 == letra9 || letra12 == letra10 || letra12 == letra11 || letra8 == letra12 || letra12 == letra13 || letra12 == letra14 || letra12 == letra15 || letra12 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra12 = (char)letra;
+        }
+        if(letra1 == letra13 || letra13 == letra3 || letra13 == letra4 || letra13 == letra2 || letra13 == letra6 || letra13 == letra7 ||letra13 == letra8 || letra5 == letra13 || letra13 == letra10 || letra13 == letra11 || letra13 == letra12 || letra9 == letra13 || letra13 == letra14 || letra13 == letra15 || letra13 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra13 = (char)letra;
+        }
+        if(letra14 == letra1 || letra14 == letra3 || letra14 == letra4 || letra14 == letra5 || letra2 == letra14 || letra14 == letra7 ||letra14 == letra8 || letra6 == letra14 || letra6 == letra14 || letra14== letra11 || letra14 == letra12 || letra14 == letra13 || letra10 == letra14 || letra14 == letra15 || letra14 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra14 = (char)letra;
+        }
+        if(letra15 == letra1 || letra3 == letra15 || letra15 == letra4 || letra15 == letra5 || letra15 == letra6 || letra2== letra15 ||letra15 == letra8 || letra15 == letra9 || letra7 == letra15 || letra7 == letra15 || letra15 == letra12 || letra15 == letra13 || letra15 == letra14 || letra11 == letra15 || letra15 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra15 = (char)letra;
+        }
+        if(letra16 == letra1 || letra4 == letra16 || letra16 == letra3 || letra16 == letra5 || letra16 == letra6 || letra16 == letra7 ||letra2 == letra16 || letra16 == letra9 || letra16 == letra10 || letra16 == letra11 || letra8 == letra16 || letra16 == letra13 || letra16 == letra14 || letra16 == letra15 || letra12 == letra16){
+            letra = generador.nextInt(15)+65;
+            letra16 = (char)letra;
+        }
+        //System.out.println("Letras 4:" + letra1 + "-" + letra2 + "-" + letra3 + "-" + letra4+ "-"+ letra5 + "-" + letra6 + "-" + letra7 + "-" + letra8+"-"+ letra9 + "-" + letra10 + "-" + letra11 + "-" + letra12+"-" +letra13 + "-" + letra14 + "-" + letra15 + "-" + letra16); 
+        
+        
         try {
-            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(0) +".png"))));
-             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(1) +".png"))));
-             jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(2) +".png"))));
-             jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(3) +".png"))));
-             jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(4) +".png"))));
-             jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(5) +".png"))));
-             jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(6) +".png"))));
-             jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(7) +".png"))));
-             jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(8) +".png"))));
-             jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(9) +".png"))));
-             jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(10) +".png"))));
-             jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(11) +".png"))));
-             jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(12) +".png"))));
-             jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(13) +".png"))));
-             jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(14) +".png"))));
-             jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letraImagen2.charAt(15) +".png"))));
+            jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra1 +".png"))));
+             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra2 +".png"))));
+             jToggleButton3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra3 +".png"))));
+             jToggleButton4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra4 +".png"))));
+             jToggleButton5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra5 +".png"))));
+             jToggleButton6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra6 +".png"))));
+             jToggleButton7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra7 +".png"))));
+             jToggleButton8.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra8 +".png"))));
+             jToggleButton9.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra9 +".png"))));
+             jToggleButton10.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra10 +".png"))));
+             jToggleButton11.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra11 +".png"))));
+             jToggleButton12.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra12 +".png"))));
+             jToggleButton13.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra13 +".png"))));
+             jToggleButton14.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra14 +".png"))));
+             jToggleButton15.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra15 +".png"))));
+             jToggleButton16.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/"+ letra16 +".png"))));
              
         } catch (IOException ex) {
                  Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
@@ -599,8 +736,16 @@ public class Fase1 extends javax.swing.JFrame {
             jToggleButton16.setEnabled(false);
         }
         jLabelAciertos.setText("" + aciertos);
+        if(aciertos>=4){
+            try {
+                jLabelLvlUp.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("imagenes/lvlup.jpg"))));
+            } catch (IOException ex) {
+                Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         if(aciertos == numImagenesAcertar && numImagenesAcertar<7) {
             numImagenesAcertar++;
+            
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -651,6 +796,7 @@ public class Fase1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelImagen5;
     private javax.swing.JLabel jLabelImagen6;
     private javax.swing.JLabel jLabelImagen7;
+    private javax.swing.JLabel jLabelLvlUp;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
